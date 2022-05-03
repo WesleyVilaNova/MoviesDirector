@@ -1,4 +1,4 @@
-package com.example.moviesdirector.view.ui
+package com.example.moviesdirector.view.ui.views
 
 import android.annotation.SuppressLint
 import android.content.Intent
