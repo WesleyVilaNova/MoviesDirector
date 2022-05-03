@@ -3,11 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/MoviesDirector/app/src/main/res/drawable/bg_app.xml" value="0.135" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MoviesDirector/app/src/main/res/drawable/bg_toolbar.xml" value="0.135" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout-v28/list_recycler_view.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/activity_details_movies.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/activity_home.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/activity_list_movies.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/activity_main.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/list_movies.xml" value="0.175" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/list_recycler_movies.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/list_recycler_view.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/toolbar.xml" value="0.18854166666666666" />
       </map>
     </option>
   </component>
