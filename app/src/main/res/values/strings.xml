@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MoviesDirector</string>
+    <string name="license_2022">copywriting 2022</string>
+    <string name="text_license">texto de licença</string>
+    <string name="logo_app">Logo_app</string>
+    <string name="director">Director</string>
+    <string name="movies">Movies</string>
+    <string name="logo_init">logo_inicial</string>
+</resources>
