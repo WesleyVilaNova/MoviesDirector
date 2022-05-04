@@ -1,9 +1,8 @@
 package com.example.moviesdirector.view.ui.models
 
 import com.example.moviesdirector.view.ui.utils.Constants
-import com.google.gson.annotations.SerializedName
 
-data class ModelConsultMovies(
+data class Result(
     val adult: Boolean,
     val backdrop_path: String,
     val overview: String,

@@ -1,8 +1,5 @@
 package com.example.moviesdirector.view.ui.utils
 
-import com.example.moviesdirector.view.ui.models.ModelConsultMovies
-import com.example.moviesdirector.view.ui.models.ResultDetailsMovies
-
 class Constants {
     companion object {
         internal const val BASE_URL = "https://api.themoviedb.org/"
@@ -24,6 +21,6 @@ class Constants {
 // page=1&
 // language=pt-BR&
 // append_to_response=images
-
+    //https://api.themoviedb.org/3/trending/movie/week?api_key=319f821ad80072b8c1dd98a08e31346c&page=1&language=pt-BR
     // https://api.themoviedb.org/3/movie/829557?api_key=319f821ad80072b8c1dd98a08e31346c&page=1&language=pt-BR
 }

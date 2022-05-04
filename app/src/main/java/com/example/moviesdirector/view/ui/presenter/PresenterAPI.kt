@@ -1,7 +1,7 @@
 package com.example.moviesdirector.view.ui.presenter
 
 import android.util.Log
-import com.example.moviesdirector.view.ui.models.ResultDetailsMovies
+import com.example.moviesdirector.view.ui.models.ModelResultDetails
 import com.example.moviesdirector.view.ui.repository.ConfigRetrofit
 import com.example.moviesdirector.view.ui.utils.Constants
 import retrofit2.Call
@@ -11,33 +11,29 @@ import retrofit2.Response
 class PresenterAPI(_view: IPresenter.ContratoView) : IPresenter.obtemAPI {
 
     private val view: IPresenter.ContratoView = _view
-    var teste: String = ""
-
 
     override fun getCallRetrofit() {
-        val call: Call<ResultDetailsMovies> = ConfigRetrofit()
+        Log.i("TAG", "chegou no getCall")
+        val call: Call<ModelResultDetails> = ConfigRetrofit()
             .getService
             .getMoviesNetwork(
-                Constants.TRENDING,
-                Constants.TYPE,
-                Constants.TEMP,
                 Constants.API_KEY,
                 Constants.PAGE,
-                Constants.LANGUAGE,
-                Constants.PARAMETER
+                Constants.LANGUAGE
             )
-        call.enqueue(object : Callback<ResultDetailsMovies> {
+        call.enqueue(object : Callback<ModelResultDetails> {
             override fun onResponse(
-                call: Call<ResultDetailsMovies>,
-                response: Response<ResultDetailsMovies>
+                call: Call<ModelResultDetails>,
+                response: Response<ModelResultDetails>
             ) {
+                Log.i("TAG", "chegou no enqueue")
                 if (response.isSuccessful) {
-                    teste = response.body().toString()
-                    Log.i("TAG", "********************$teste")
+                    Log.i("TAG", "chegou no sucess")
+                    val resultado : ModelResultDetails? = response.body()
+                    Log.i("TAG", "chegou no $resultado")
                 }
             }
-
-            override fun onFailure(call: Call<ResultDetailsMovies>, t: Throwable) {
+            override fun onFailure(call: Call<ModelResultDetails>, t: Throwable) {
                 view.viewError()
             }
 

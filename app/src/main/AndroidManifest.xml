@@ -13,13 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoviesDirector">
         <activity
-            android:name=".view.ui.views.DetailsMoviesActivity"
+            android:name=".view.ui.views.ui.DetailsMoviesActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ui.views.ListMoviesActivity"
+            android:name=".view.ui.views.ui.ListMoviesActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ui.views.SplashActivity"
+            android:name=".view.ui.views.ui.SplashActivity"
             android:exported="true"
             android:screenOrientation="fullSensor">
             <intent-filter>

@@ -1,5 +1,8 @@
 package com.example.moviesdirector.view.ui.presenter
 
+import com.example.moviesdirector.view.ui.models.ModelResultDetails
+import com.example.moviesdirector.view.ui.models.Result
+
 interface IPresenter{
 
     interface obtemAPI {
@@ -7,7 +10,7 @@ interface IPresenter{
     }
 
     interface ContratoView {
-        fun viewAPI()
+        fun viewAPI(listMovies: List<ModelResultDetails>)
         fun viewError()
     }
 

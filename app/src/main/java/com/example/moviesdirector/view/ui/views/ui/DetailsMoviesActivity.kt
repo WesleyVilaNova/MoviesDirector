@@ -1,4 +1,4 @@
-package com.example.moviesdirector.view.ui.views
+package com.example.moviesdirector.view.ui.views.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
