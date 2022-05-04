@@ -19,11 +19,11 @@ data class Result(
     }
 
     fun getPostImg(): String {
-        return Constants.IMG + "$poster_path"
+        return Constants.IMG + poster_path
     }
 
     fun getPostImgDetails(): String {
-        return Constants.IMG + "$backdrop_path"
+        return Constants.IMG + backdrop_path
 
     }
 

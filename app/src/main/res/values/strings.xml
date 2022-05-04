@@ -15,4 +15,5 @@
     <string name="ib_menu">ícone de menu</string>
     <string name="img_barra">img_barra</string>
     <string name="know_more">Saiba mais</string>
+    <string name="msg_error">Desculpe, ocorreu um erro ao consultar</string>
 </resources>

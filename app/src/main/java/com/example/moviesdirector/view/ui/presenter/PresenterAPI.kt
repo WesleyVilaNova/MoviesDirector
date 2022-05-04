@@ -8,7 +8,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PresenterAPI(_view: IPresenter.ContratoView) : IPresenter.obtemAPI {
+class PresenterAPI(_view: IPresenter.ContratoView) : IPresenter.getObtemAPI {
 
     private val view: IPresenter.ContratoView = _view
 
@@ -26,11 +26,9 @@ class PresenterAPI(_view: IPresenter.ContratoView) : IPresenter.obtemAPI {
                 call: Call<ModelResultDetails>,
                 response: Response<ModelResultDetails>
             ) {
-                Log.i("TAG", "chegou no enqueue")
                 if (response.isSuccessful) {
-                    Log.i("TAG", "chegou no sucess")
                     val resultado : ModelResultDetails? = response.body()
-                    Log.i("TAG", "chegou no $resultado")
+                    view.viewAPI(resultado?.results)
                 }
             }
             override fun onFailure(call: Call<ModelResultDetails>, t: Throwable) {

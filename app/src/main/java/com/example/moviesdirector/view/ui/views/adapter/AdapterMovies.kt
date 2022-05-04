@@ -4,14 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdirector.databinding.ListRecyclerMoviesBinding
-import com.example.moviesdirector.view.ui.models.ModelResultDetails
 import com.example.moviesdirector.view.ui.models.Result
 import com.squareup.picasso.Picasso
 
 
-lateinit var result: Result
-
-class AdapterMovies(private var listMovies: List<ModelResultDetails>?) :
+class AdapterMovies(private var listMovies: List<Result>?) :
     RecyclerView.Adapter<AdapterMovies.MyViewHolder>() {
 
 
@@ -24,12 +21,11 @@ class AdapterMovies(private var listMovies: List<ModelResultDetails>?) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val itemMovie = listMovies?.get(position)
 
-        Picasso.get().load(result.getPostImg()).into(holder.binding.imageViewPosterPath)
+        Picasso.get().load(itemMovie?.getPostImg()).into(holder.binding.imageViewPosterPath)
         if (itemMovie != null) {
-            holder.binding.titleMovies.text = itemMovie.results[position].title
-            holder.binding.textViewVoteAverage.text =
-                itemMovie.results[position].vote_average.toString()
-            holder.binding.textViewDetailsMovies.text = itemMovie.results[position].overview
+            holder.binding.titleMovies.text = itemMovie.title
+            holder.binding.textViewVoteAverage.text = itemMovie.vote_average.toString()
+            holder.binding.textViewDetailsMovies.text = itemMovie.overview
             //Picasso.get().load("https://i.imgur.com/DvpvklR.png").into(imageView);
         }
     }
