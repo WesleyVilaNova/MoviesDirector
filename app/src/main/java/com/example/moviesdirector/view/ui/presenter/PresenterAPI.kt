@@ -38,4 +38,5 @@ class PresenterAPI(_view: IPresenter.ContratoView) : IPresenter.getObtemAPI {
         })
     }
 
+
 }

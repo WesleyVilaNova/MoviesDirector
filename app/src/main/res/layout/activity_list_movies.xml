@@ -8,7 +8,7 @@
     tools:context=".view.ui.views.ui.ListMoviesActivity">
 
     <include
-        android:id="@+id/include"
+        android:id="@+id/includeDetails"
         layout="@layout/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include">
+        app:layout_constraintTop_toBottomOf="@+id/includeDetails">
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -32,7 +32,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/include"
+            app:layout_constraintTop_toBottomOf="@+id/includeDetails"
             tools:listitem="@layout/list_recycler_movies" />
 
     </ScrollView>
