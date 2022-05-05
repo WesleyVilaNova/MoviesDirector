@@ -1,5 +1,6 @@
 package com.example.moviesdirector.view.ui.views.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -30,12 +31,16 @@ class ListMoviesActivity : AppCompatActivity(), IPresenter.ContratoView {
     }
 
     override fun viewAPI(listMovies: List<Result>?) {
-        binding.recyclerViewList.adapter = AdapterMovies(listMovies)
         binding.recyclerViewList.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewList.setHasFixedSize(true)
-        binding.recyclerViewList.adapter = AdapterMovies(listMovies)
+        binding.recyclerViewList.adapter = AdapterMovies(listMovies){
+            openScreenDetailsMovies()
+        }
+    }
 
-
+    private fun openScreenDetailsMovies() {
+        val intent = Intent (this, DetailsMoviesActivity::class.java)
+        startActivity(intent)
     }
 
     override fun viewError() {
