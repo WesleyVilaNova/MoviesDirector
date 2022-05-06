@@ -27,10 +27,11 @@ class PresenterAPI(_view: IPresenter.ContratoView) : IPresenter.getObtemAPI {
                 response: Response<ModelResultDetails>
             ) {
                 if (response.isSuccessful) {
-                    val resultado : ModelResultDetails? = response.body()
+                    val resultado: ModelResultDetails? = response.body()
                     view.viewAPI(resultado?.results)
                 }
             }
+
             override fun onFailure(call: Call<ModelResultDetails>, t: Throwable) {
                 view.viewError()
             }

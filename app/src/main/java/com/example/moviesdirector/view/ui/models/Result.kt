@@ -1,6 +1,7 @@
 package com.example.moviesdirector.view.ui.models
 
 import com.example.moviesdirector.view.ui.utils.Constants
+import java.io.Serializable
 
 data class Result(
     val adult: Boolean,
@@ -11,7 +12,7 @@ data class Result(
     val title: String,
     val vote_average: Double,
     val id: Double
-) {
+) : Serializable {
 
     fun getDetailsMovies(): String {
         return Constants.BASE_URL + Constants.TYPE + "$id" + Constants.API_KEY + Constants.LANGUAGE

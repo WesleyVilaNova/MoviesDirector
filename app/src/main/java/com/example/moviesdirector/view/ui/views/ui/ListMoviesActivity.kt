@@ -12,7 +12,7 @@ import com.example.moviesdirector.view.ui.presenter.IPresenter
 import com.example.moviesdirector.view.ui.presenter.PresenterAPI
 import com.example.moviesdirector.view.ui.views.adapter.AdapterMovies
 
-class ListMoviesActivity : AppCompatActivity(), IPresenter.ContratoView {
+class ListMoviesActivity : AppCompatActivity(), IPresenter.ContratoView, AdapterMovies.Onclick {
     var view: IPresenter.getObtemAPI = PresenterAPI(this)
 
     private lateinit var binding: ActivityListMoviesBinding
@@ -33,17 +33,17 @@ class ListMoviesActivity : AppCompatActivity(), IPresenter.ContratoView {
     override fun viewAPI(listMovies: List<Result>?) {
         binding.recyclerViewList.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewList.setHasFixedSize(true)
-        binding.recyclerViewList.adapter = AdapterMovies(listMovies){
-            openScreenDetailsMovies()
-        }
+        binding.recyclerViewList.adapter = AdapterMovies(listMovies, this)
     }
 
-    private fun openScreenDetailsMovies() {
-        val intent = Intent (this, DetailsMoviesActivity::class.java)
-        startActivity(intent)
-    }
 
     override fun viewError() {
         Toast.makeText(this, getString(R.string.msg_error), Toast.LENGTH_LONG).show()
+    }
+
+    override fun onClickKnowMovie(movie: Result?) {
+        val intent = Intent(this, DetailsMoviesActivity::class.java)
+        intent.putExtra("key", movie)
+        startActivity(intent)
     }
 }

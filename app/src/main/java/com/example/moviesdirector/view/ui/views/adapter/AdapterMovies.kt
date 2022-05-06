@@ -1,6 +1,5 @@
 package com.example.moviesdirector.view.ui.views.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,8 +8,12 @@ import com.example.moviesdirector.view.ui.models.Result
 import com.squareup.picasso.Picasso
 
 
-class AdapterMovies(private var listMovies: List<Result>?, val btnKnow : (Intent) -> Unit?) :
+class AdapterMovies(private var listMovies: List<Result>?, val clickMovie: Onclick) :
     RecyclerView.Adapter<AdapterMovies.MyViewHolder>() {
+
+    interface Onclick {
+        fun onClickKnowMovie(movie: Result?)
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -23,13 +26,14 @@ class AdapterMovies(private var listMovies: List<Result>?, val btnKnow : (Intent
         val itemMovie = listMovies?.get(position)
 
         Picasso.get().load(itemMovie?.getPostImg()).into(holder.binding.imageViewPosterPath)
+
         if (itemMovie != null) {
             holder.binding.titleMovies.text = itemMovie.title
             holder.binding.textViewVoteAverage.text = itemMovie.vote_average.toString()
             holder.binding.textViewDetailsMovies.text = itemMovie.overview
-            //Picasso.get().load("https://i.imgur.com/DvpvklR.png").into(imageView);
 
-            holder.binding.btnKnowMore.setOnClickListener { btnKnow (Intent()) }
+            holder.binding.btnKnowMore.setOnClickListener { clickMovie.onClickKnowMovie(itemMovie) }
+
         }
     }
 
@@ -42,4 +46,5 @@ class AdapterMovies(private var listMovies: List<Result>?, val btnKnow : (Intent
         RecyclerView.ViewHolder(binding.root) {
 
     }
+
 }

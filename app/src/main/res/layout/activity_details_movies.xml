@@ -21,11 +21,11 @@
 
         <ImageView
             android:id="@+id/imageView_backdrop_path"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="250dp"
             android:layout_marginTop="16dp"
             android:contentDescription="@string/banner_movies"
-            android:padding="16dp"
+            android:layout_margin="16dp"
             android:scaleType="centerCrop"
             android:src="@drawable/img_details"
             app:layout_constraintEnd_toEndOf="parent"

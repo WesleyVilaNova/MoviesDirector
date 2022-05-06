@@ -14,7 +14,7 @@ class ConfigRetrofit {
             .build()
     }
 
-    val getService : WebService by lazy {
+    val getService: WebService by lazy {
         retrofit.create(WebService::class.java)
     }
 }
