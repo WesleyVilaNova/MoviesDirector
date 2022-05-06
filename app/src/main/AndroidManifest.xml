@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoviesDirector">
         <activity
+            android:name=".view.ui.views.ui.AboutScreenActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ui.views.ui.DetailsMoviesActivity"
             android:exported="false" />
         <activity

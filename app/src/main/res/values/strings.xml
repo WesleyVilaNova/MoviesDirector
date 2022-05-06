@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">MoviesDirector</string>
     <string name="license_2022">copywriting 2022</string>
     <string name="text_license">texto de licença</string>
@@ -7,13 +8,18 @@
     <string name="movies">Movies</string>
     <string name="logo_init">logo_inicial</string>
     <string name="banner_movies">Banner Movies</string>
+
     <string name="name_movies">XXXXXXXXXXXXXXXXXXXXXXX</string>
     <string name="punctuation">Pontuação :</string>
     <string name="value">7.89</string>
-    <string name="Details_movies">Nathan Drake e seu parceiro canastrão Victor.Sullivan embarcam em uma perigosa busca para encontrar o maior tesouro jamais encontrado. Enquanto isso, eles também rastreiam pistas que podem levar ao irmão perdido de Nathan.</string>
+    <string name="Details_movies">de Nathan.</string>
     <string name="name_app">Movies Director</string>
+
     <string name="ib_menu">ícone de menu</string>
     <string name="img_barra">img_barra</string>
     <string name="know_more">Saiba mais</string>
     <string name="msg_error">Desculpe, ocorreu um erro ao consultar</string>
+
+    <string name="about">Sobre o aplicativo</string>
+    <string name="netflix">Netflix</string>
 </resources>

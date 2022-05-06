@@ -1,7 +1,10 @@
 package com.example.moviesdirector.view.ui.views.ui
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +13,7 @@ import com.example.moviesdirector.databinding.ActivityListMoviesBinding
 import com.example.moviesdirector.view.ui.models.Result
 import com.example.moviesdirector.view.ui.presenter.IPresenter
 import com.example.moviesdirector.view.ui.presenter.PresenterAPI
+import com.example.moviesdirector.view.ui.utils.Constants
 import com.example.moviesdirector.view.ui.views.adapter.AdapterMovies
 
 class ListMoviesActivity : AppCompatActivity(), IPresenter.ContratoView, AdapterMovies.Onclick {
@@ -23,7 +27,27 @@ class ListMoviesActivity : AppCompatActivity(), IPresenter.ContratoView, Adapter
         setContentView(binding.root)
 
         chamandoRetrofit()
+        clickMenu()
 
+    }
+
+    private fun clickMenu() {
+        binding.includeDetails.ibMenu.setOnClickListener {
+            val popupMenu = PopupMenu(this, binding.includeDetails.ibMenu)
+            popupMenu.menuInflater.inflate(R.menu.teste_menu, popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
+                if (menuItem.itemId == R.id.it_sobre) {
+                    val intent = Intent(this, AboutScreenActivity::class.java)
+                    startActivity(intent)
+                } else if (menuItem.itemId == R.id.netflix) {
+                    val intent = Intent(Intent.ACTION_VIEW)
+                    intent.data = Uri.parse(Constants.NETFLIX)
+                    startActivity(intent)
+                }
+                true
+            }
+            popupMenu.show()
+        }
     }
 
     private fun chamandoRetrofit() {

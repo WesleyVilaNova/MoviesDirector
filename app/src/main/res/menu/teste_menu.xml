@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/netflix"
+        android:title="@string/netflix"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/it_sobre"
+        android:title="@string/about"
+        app:showAsAction="never" />
+
+</menu>

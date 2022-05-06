@@ -1,10 +1,15 @@
 package com.example.moviesdirector.view.ui.views.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moviesdirector.R
 import com.example.moviesdirector.databinding.ActivityDetailsMoviesBinding
 import com.example.moviesdirector.view.ui.models.Result
+import com.example.moviesdirector.view.ui.utils.Constants
 import com.squareup.picasso.Picasso
 
 class DetailsMoviesActivity : AppCompatActivity() {
@@ -16,8 +21,29 @@ class DetailsMoviesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+
+        clickMenu()
         recuperando()
 
+    }
+
+    private fun clickMenu() {
+        binding.includeDetails.ibMenu.setOnClickListener {
+            val popupMenu = PopupMenu(this, binding.includeDetails.ibMenu)
+            popupMenu.menuInflater.inflate(R.menu.teste_menu, popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
+                if (menuItem.itemId == R.id.it_sobre) {
+                    val intent = Intent(this, AboutScreenActivity::class.java)
+                    startActivity(intent)
+                } else if (menuItem.itemId == R.id.netflix) {
+                    val intent = Intent(Intent.ACTION_VIEW)
+                    intent.data = Uri.parse(Constants.NETFLIX)
+                    startActivity(intent)
+                }
+                true
+            }
+            popupMenu.show()
+        }
     }
 
     private fun recuperando() {

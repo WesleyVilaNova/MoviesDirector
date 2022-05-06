@@ -11,6 +11,7 @@ class Constants {
         internal const val LANGUAGE = "pt-BR"
         internal const val PARAMETER = "append_to_response=images"
         internal const val IMG = "https://image.tmdb.org/t/p/w500"
+        internal const val NETFLIX = "https://www.netflix.com/br/"
     }
 //https://api.themoviedb.org/
 // 3/
