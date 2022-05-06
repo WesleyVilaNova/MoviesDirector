@@ -34,7 +34,7 @@ class ListMoviesActivity : AppCompatActivity(), IPresenter.ContratoView, Adapter
     private fun clickMenu() {
         binding.includeDetails.ibMenu.setOnClickListener {
             val popupMenu = PopupMenu(this, binding.includeDetails.ibMenu)
-            popupMenu.menuInflater.inflate(R.menu.teste_menu, popupMenu.menu)
+            popupMenu.menuInflater.inflate(R.menu.itens_menu, popupMenu.menu)
             popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
                 if (menuItem.itemId == R.id.it_sobre) {
                     val intent = Intent(this, AboutScreenActivity::class.java)
@@ -59,7 +59,6 @@ class ListMoviesActivity : AppCompatActivity(), IPresenter.ContratoView, Adapter
         binding.recyclerViewList.setHasFixedSize(true)
         binding.recyclerViewList.adapter = AdapterMovies(listMovies, this)
     }
-
 
     override fun viewError() {
         Toast.makeText(this, getString(R.string.msg_error), Toast.LENGTH_LONG).show()

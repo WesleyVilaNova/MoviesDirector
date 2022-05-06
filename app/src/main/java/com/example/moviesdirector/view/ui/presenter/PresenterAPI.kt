@@ -33,6 +33,7 @@ class PresenterAPI(_view: IPresenter.ContratoView) : IPresenter.getObtemAPI {
             }
 
             override fun onFailure(call: Call<ModelResultDetails>, t: Throwable) {
+                Log.i("TAG", "Error ${t.message}")
                 view.viewError()
             }
 

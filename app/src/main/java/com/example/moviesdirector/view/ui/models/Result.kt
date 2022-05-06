@@ -7,10 +7,11 @@ data class Result(
     val adult: Boolean,
     val backdrop_path: String,
     val overview: String,
-    val popularity: Double,
+    val popularity: String?,
+    val release_date: String?,
     val poster_path: String,
     val title: String,
-    val vote_average: Double,
+    val vote_average: String?,
     val id: Double
 ) : Serializable {
 

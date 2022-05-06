@@ -24,13 +24,22 @@ class DetailsMoviesActivity : AppCompatActivity() {
 
         clickMenu()
         recuperando()
+        btn_watch()
 
+    }
+
+    private fun btn_watch() {
+        binding.btnWatch.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(Constants.NETFLIX)
+            startActivity(intent)
+        }
     }
 
     private fun clickMenu() {
         binding.includeDetails.ibMenu.setOnClickListener {
             val popupMenu = PopupMenu(this, binding.includeDetails.ibMenu)
-            popupMenu.menuInflater.inflate(R.menu.teste_menu, popupMenu.menu)
+            popupMenu.menuInflater.inflate(R.menu.itens_menu, popupMenu.menu)
             popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
                 if (menuItem.itemId == R.id.it_sobre) {
                     val intent = Intent(this, AboutScreenActivity::class.java)
@@ -52,6 +61,9 @@ class DetailsMoviesActivity : AppCompatActivity() {
         if (movie != null) {
             binding.textViewDetailsMovies.text = movie.overview
             binding.titleMovies.text = movie.title
+            binding.popularity.text = movie.popularity
+            binding.releaseDate.text = movie.release_date
+            binding.voteAverage.text = movie.vote_average
             Picasso.get().load(movie.getPostImgDetails()).into(binding.imageViewBackdropPath)
         }
 
