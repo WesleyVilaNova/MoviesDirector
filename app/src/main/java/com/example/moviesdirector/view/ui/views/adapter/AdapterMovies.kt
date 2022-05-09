@@ -29,7 +29,7 @@ class AdapterMovies(private var listMovies: List<Result>?, val clickMovie: Oncli
 
         if (itemMovie != null) {
             holder.binding.titleMovies.text = itemMovie.title
-            holder.binding.textViewVoteAverage.text = itemMovie.vote_average.toString()
+            holder.binding.releaseDateRecycler.text = itemMovie.release_date
             holder.binding.textViewDetailsMovies.text = itemMovie.overview
 
             holder.binding.btnKnowMore.setOnClickListener { clickMovie.onClickKnowMovie(itemMovie) }

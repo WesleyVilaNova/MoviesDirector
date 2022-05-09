@@ -21,7 +21,6 @@ class DetailsMoviesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-
         clickMenu()
         recuperando()
         btn_watch()
@@ -63,7 +62,8 @@ class DetailsMoviesActivity : AppCompatActivity() {
             binding.titleMovies.text = movie.title
             binding.popularity.text = movie.popularity
             binding.releaseDate.text = movie.release_date
-            binding.voteAverage.text = movie.vote_average
+            binding.voteAverage?.rating = (movie.vote_average?.toFloat() ?: 0) as Float
+
             Picasso.get().load(movie.getPostImgDetails()).into(binding.imageViewBackdropPath)
         }
 

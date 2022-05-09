@@ -10,6 +10,7 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="64dp">
 
+
         <include
             android:id="@+id/includeDetails"
             layout="@layout/toolbar"
@@ -67,10 +68,10 @@
             android:id="@+id/release_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:contentDescription="@string/data_de_lancamento"
             android:fontFamily="@font/font_text_alice"
             android:text="@string/_2022_22_22"
+            android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/textView4"
             app:layout_constraintStart_toEndOf="@+id/textView4"
@@ -95,9 +96,9 @@
             android:id="@+id/popularity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:contentDescription="@string/popularity"
             android:text="@string/popularity"
+            android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/textView5"
             app:layout_constraintStart_toEndOf="@+id/textView5"
@@ -110,7 +111,8 @@
             android:layout_marginTop="8dp"
             android:contentDescription="@string/nota"
             android:fontFamily="@font/font_text_alice"
-            android:paddingHorizontal="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
             android:text="@string/nota"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -119,14 +121,22 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 
-        <TextView
+        <RatingBar
             android:id="@+id/vote_average"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:contentDescription="@string/nota"
-            android:text="@string/nota"
-            android:textSize="18sp"
+            android:background="@color/transparent"
+            android:numStars="10"
+            android:progressBackgroundTint="@color/black"
+            android:progressTint="@color/red_logo"
+            android:rating="4.5"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:secondaryProgressTint="@color/red_logo"
+            android:stepSize="0.5"
+            android:transformPivotX="0dp"
+            android:transformPivotY="0dp"
             app:layout_constraintBottom_toBottomOf="@+id/textView8"
             app:layout_constraintStart_toEndOf="@+id/textView8"
             app:layout_constraintTop_toTopOf="@+id/textView8" />

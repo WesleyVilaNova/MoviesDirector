@@ -11,7 +11,7 @@ data class Result(
     val release_date: String?,
     val poster_path: String,
     val title: String,
-    val vote_average: String?,
+    val vote_average: Float?,
     val id: Double
 ) : Serializable {
 
