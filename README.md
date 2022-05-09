@@ -40,11 +40,13 @@ O MoviesDirector indexa conteúdo encontrado na web automaticamente usando ajuda
 - `Menu ToolBar`: Funcional com várias opções
 - `Retrofit2`: Consumo de API
 - `Picasso`: Carregamento de Imagem
-- `CleanCode e Padrões de projeto`:  
+- `CleanCode e Padrões de projeto`
 
 ## Tecnologias utilizadas
 
 - `Kotlin`
+- `Retrofit2`
+- `Picasso`
 
 ## Pessoa desenvolvedora
 
