@@ -11,7 +11,7 @@
 * [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
 * [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)
-* [Conclusão](#conclusão)
+* [AVISO IMPORTANTE](#conclusão)
 
 ## Descrição do projeto
 O MoviesDirector indexa conteúdo encontrado na web automaticamente usando ajuda de APIs publicas do TMDB. O uso do MoviesDirector é totalmente responsabilidade do usuário. A distribuição de filmes é da plataforma TMDB. Qualquer violação de direitos autorais, entre em contato com o distribuidor. Em caso de dúvidas ou reclamações sobre conteúdo, funcionalidade do site, anúncios entre outros, entre em contato diretamente comigo no GitHub ou LinkdIn.
@@ -61,4 +61,8 @@ O MoviesDirector indexa conteúdo encontrado na web automaticamente usando ajuda
 :---: |
 
 
+## AVISO IMPORTANTE :
 
+Será necessário cadastrar sua própria KEY no site : https://www.themoviedb.org/documentation/api para obter um token único (key).
+
+Após o cadastro utilize sua chave "key" no Directory "utils" do projeto e adicione na constante "API_KEY"
