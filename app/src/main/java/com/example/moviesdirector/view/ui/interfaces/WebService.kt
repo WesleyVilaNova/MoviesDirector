@@ -13,13 +13,13 @@ interface WebService {
         @Query("language") languege: String?,
     ): Call<ModelResultDetails>
 }
-//https://api.themoviedb.org/3/trending/movie/week?api_key=319f821ad80072b8c1dd98a08e31346c&page=1&language=pt-BR
+//https://api.themoviedb.org/3/trending/movie/week?api_key=&page=1&language=pt-BR
 //https://api.themoviedb.org/
 // 3/
 // trending/
 // movie/
 // week?
-// api_key=319f821ad80072b8c1dd98a08e31346c&
+// api_key=&
 // page=1&
 // language=pt-BR&
 // append_to_response=images
