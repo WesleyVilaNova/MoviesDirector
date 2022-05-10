@@ -22,13 +22,20 @@ O MoviesDirector indexa conteúdo encontrado na web automaticamente usando ajuda
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
 
+
+
 ## :hammer: Imagens e Funcionalidades do projeto
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/92765775/167485803-a333a8d9-1a19-4de6-90c7-b61f6a68fe62.jpg" width="270" height="500">
-<img src="https://user-images.githubusercontent.com/92765775/167491587-849774cb-fdc7-4b76-9b1f-caa7398233a8.jpg" width="270" height="500">
- <img src="https://user-images.githubusercontent.com/92765775/167491598-789c02bc-6875-4f65-9f90-961ff0796fd3.jpg" width="270" height="500">
-</p>
+<img src="https://user-images.githubusercontent.com/92765775/167646972-57a6c91e-df06-48e0-b529-4db67d0bcc9b.gif" width="270" height="500">
+<img src="https://user-images.githubusercontent.com/92765775/167646968-9dfeb6c8-3843-4b0c-8c9f-0356b5fea59c.gif" width="270" height="500">
+<img src="https://user-images.githubusercontent.com/92765775/167646979-18607482-c847-42c7-a63f-81b16265afcf.gif" width="270" height="500">
+<img src="https://user-images.githubusercontent.com/92765775/167646959-ed34a663-0bfa-4c9a-a36e-db1a95341584.gif" width="270" height="500">
+<img src="https://user-images.githubusercontent.com/92765775/167646975-179af6ce-1cf4-42b0-8683-d70a145bb71b.gif" width="270" height="500">
+<img src="https://user-images.githubusercontent.com/92765775/167648905-ba9ae22d-572c-4461-8c38-3720cf674a81.jpg" width="270" height="500">
+  
+  </p>
+  
 
 - `Splash Screen`: Tela inicial com progress bar
 - `ViewBinding`: recurso que facilita a programação de códigos que interagem com visualizações
