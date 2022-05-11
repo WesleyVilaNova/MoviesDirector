@@ -63,6 +63,9 @@ O MoviesDirector indexa conteúdo encontrado na web automaticamente usando ajuda
 
 ## AVISO IMPORTANTE :
 
+A KEY pode está inválida, cadastre sua própria KEY no site.
+
 Será necessário cadastrar sua própria KEY no site : https://www.themoviedb.org/documentation/api para obter um token único (key).
 
 Após o cadastro utilize sua chave "key" no Directory "utils" do projeto e adicione na constante "API_KEY"
+
