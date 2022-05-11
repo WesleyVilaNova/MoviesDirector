@@ -14,6 +14,7 @@ import com.example.moviesdirector.view.ui.utils.Constants
 class AboutScreenActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityAboutScreenBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityAboutScreenBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)

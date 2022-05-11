@@ -7,24 +7,32 @@ import android.view.MenuItem
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moviesdirector.R
 import com.example.moviesdirector.databinding.ActivityListMoviesBinding
+import com.example.moviesdirector.view.ui.interfaces.WebService
 import com.example.moviesdirector.view.ui.models.Result
-import com.example.moviesdirector.view.ui.presenter.IPresenter
-import com.example.moviesdirector.view.ui.presenter.PresenterAPI
+import com.example.moviesdirector.view.ui.repository.MainRepository
 import com.example.moviesdirector.view.ui.utils.Constants
+import com.example.moviesdirector.view.ui.viewmodel.MainViewModel
+import com.example.moviesdirector.view.ui.viewmodel.MainViewModelFactory
 import com.example.moviesdirector.view.ui.views.adapter.AdapterMovies
 
-class ListMoviesActivity : AppCompatActivity(), IPresenter.ContratoView, AdapterMovies.Onclick {
-    var view: IPresenter.getObtemAPI = PresenterAPI(this)
+class ListMoviesActivity : AppCompatActivity(), AdapterMovies.Onclick {
 
     private lateinit var binding: ActivityListMoviesBinding
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityListMoviesBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        viewModel = ViewModelProvider(
+            this,
+            MainViewModelFactory(MainRepository(retrofit = WebService.getInstance()))
+        )[MainViewModel::class.java]
 
         chamandoRetrofit()
         clickMenu()
@@ -51,18 +59,17 @@ class ListMoviesActivity : AppCompatActivity(), IPresenter.ContratoView, Adapter
     }
 
     private fun chamandoRetrofit() {
-        view.getCallRetrofit()
-    }
-
-    override fun viewAPI(listMovies: List<Result>?) {
         binding.recyclerViewList.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewList.setHasFixedSize(true)
-        binding.recyclerViewList.adapter = AdapterMovies(listMovies, this)
+        viewModel.getListMovies()
+        viewModel.listMovies.observe(this) {
+            binding.recyclerViewList.adapter = AdapterMovies(it, this)
+        }
+        viewModel.errorMsg.observe( this) {
+            Toast.makeText(this,"Ocorreu um error ao consultar $it",Toast.LENGTH_LONG).show()
+        }
     }
 
-    override fun viewError() {
-        Toast.makeText(this, getString(R.string.msg_error), Toast.LENGTH_LONG).show()
-    }
 
     override fun onClickKnowMovie(movie: Result?) {
         val intent = Intent(this, DetailsMoviesActivity::class.java)

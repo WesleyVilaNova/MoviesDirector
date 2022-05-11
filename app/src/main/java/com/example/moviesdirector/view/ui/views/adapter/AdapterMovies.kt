@@ -8,13 +8,12 @@ import com.example.moviesdirector.view.ui.models.Result
 import com.squareup.picasso.Picasso
 
 
-class AdapterMovies(private var listMovies: List<Result>?, val clickMovie: Onclick) :
+class AdapterMovies(private var listMovies: List<Result>?, private val clickMovie: Onclick) :
     RecyclerView.Adapter<AdapterMovies.MyViewHolder>() {
 
     interface Onclick {
         fun onClickKnowMovie(movie: Result?)
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
@@ -25,26 +24,22 @@ class AdapterMovies(private var listMovies: List<Result>?, val clickMovie: Oncli
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val itemMovie = listMovies?.get(position)
 
-        Picasso.get().load(itemMovie?.getPostImg()).into(holder.binding.imageViewPosterPath)
+        itemMovie?.let {
 
-        if (itemMovie != null) {
+            Picasso.get().load(itemMovie.getPostImg()).into(holder.binding.imageViewPosterPath)
             holder.binding.titleMovies.text = itemMovie.title
             holder.binding.releaseDateRecycler.text = itemMovie.release_date
             holder.binding.textViewDetailsMovies.text = itemMovie.overview
 
-            holder.binding.btnKnowMore.setOnClickListener { clickMovie.onClickKnowMovie(itemMovie) }
-
         }
+        holder.binding.btnKnowMore.setOnClickListener { clickMovie.onClickKnowMovie(itemMovie) }
     }
 
     override fun getItemCount(): Int {
         return listMovies?.size ?: 0
     }
 
-
     class MyViewHolder(val binding: ListRecyclerMoviesBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-
-    }
+        RecyclerView.ViewHolder(binding.root)
 
 }

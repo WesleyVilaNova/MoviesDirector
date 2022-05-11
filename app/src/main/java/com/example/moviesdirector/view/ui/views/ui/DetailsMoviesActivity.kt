@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModel
 import com.example.moviesdirector.R
 import com.example.moviesdirector.databinding.ActivityDetailsMoviesBinding
 import com.example.moviesdirector.view.ui.models.Result
@@ -62,7 +63,7 @@ class DetailsMoviesActivity : AppCompatActivity() {
             binding.titleMovies.text = movie.title
             binding.popularity.text = movie.popularity
             binding.releaseDate.text = movie.release_date
-            binding.voteAverage?.rating = (movie.vote_average?.toFloat() ?: 0) as Float
+            binding.voteAverage.rating = (movie.vote_average ?: 0) as Float
 
             Picasso.get().load(movie.getPostImgDetails()).into(binding.imageViewBackdropPath)
         }

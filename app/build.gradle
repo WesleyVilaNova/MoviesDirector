@@ -55,4 +55,9 @@ dependencies {
     // Picassso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    // LiveData and ViewModel JetPack
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+
+
 }
