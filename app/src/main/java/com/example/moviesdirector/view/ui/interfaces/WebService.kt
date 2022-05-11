@@ -34,18 +34,3 @@ interface WebService {
 
     }
 }
-<<<<<<< HEAD
-
-
-=======
-//https://api.themoviedb.org/3/trending/movie/week?api_key=&page=1&language=pt-BR
-//https://api.themoviedb.org/
-// 3/
-// trending/
-// movie/
-// week?
-// api_key=&
-// page=1&
-// language=pt-BR&
-// append_to_response=images
->>>>>>> 39b487c612bc9ce364814d4e7f4bc137acbb8ee1
