@@ -41,7 +41,7 @@ O MoviesDirector indexa conteúdo encontrado na web automaticamente usando ajuda
 - `ViewBinding`: recurso que facilita a programação de códigos que interagem com visualizações
 - `Fontes personalizadas, ícones e cores`: Para maior exclusividade
 - `ScreenOrientation`: Manter a tela Screen fixa
-- `Arquetetura`: MVP
+- `Arquetetura`: Atualizada de MVP ---> MVVM
 - `ToolBar`: Personalizada
 - `CardView`: Design layout
 - `Menu ToolBar`: Funcional com várias opções
