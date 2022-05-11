@@ -25,8 +25,8 @@ class SplashActivity : AppCompatActivity() {
     private fun initSplashScreen() {
         Handler(Looper.getMainLooper()).postDelayed(3000, 3000) {
             val intent = Intent(this, ListMoviesActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
-            finish()
         }
     }
 

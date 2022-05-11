@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="@dimen/padding">
 
         <ImageView
             android:id="@+id/imageView_poster_path"
@@ -73,7 +73,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:backgroundTint="@color/red_logo"
-            android:paddingHorizontal="3dp"
             android:text="@string/know_more"
             android:textSize="12sp"
             app:cornerRadius="8dp"

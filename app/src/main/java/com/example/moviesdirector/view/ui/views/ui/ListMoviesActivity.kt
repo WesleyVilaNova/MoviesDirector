@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moviesdirector.R
 import com.example.moviesdirector.databinding.ActivityListMoviesBinding
+import com.example.moviesdirector.view.ui.interfaces.Onclick
 import com.example.moviesdirector.view.ui.interfaces.WebService
 import com.example.moviesdirector.view.ui.models.Result
 import com.example.moviesdirector.view.ui.repository.MainRepository
@@ -19,7 +20,7 @@ import com.example.moviesdirector.view.ui.viewmodel.MainViewModel
 import com.example.moviesdirector.view.ui.viewmodel.MainViewModelFactory
 import com.example.moviesdirector.view.ui.views.adapter.AdapterMovies
 
-class ListMoviesActivity : AppCompatActivity(), AdapterMovies.Onclick {
+class ListMoviesActivity : AppCompatActivity(), Onclick {
 
     private lateinit var binding: ActivityListMoviesBinding
     private lateinit var viewModel: MainViewModel
@@ -66,10 +67,9 @@ class ListMoviesActivity : AppCompatActivity(), AdapterMovies.Onclick {
             binding.recyclerViewList.adapter = AdapterMovies(it, this)
         }
         viewModel.errorMsg.observe( this) {
-            Toast.makeText(this,"Ocorreu um error ao consultar $it",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,R.string.msg_error,Toast.LENGTH_LONG).show()
         }
     }
-
 
     override fun onClickKnowMovie(movie: Result?) {
         val intent = Intent(this, DetailsMoviesActivity::class.java)

@@ -4,15 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdirector.databinding.ListRecyclerMoviesBinding
+import com.example.moviesdirector.view.ui.interfaces.Onclick
 import com.example.moviesdirector.view.ui.models.Result
 import com.squareup.picasso.Picasso
 
 
 class AdapterMovies(private var listMovies: List<Result>?, private val clickMovie: Onclick) :
-    RecyclerView.Adapter<AdapterMovies.MyViewHolder>() {
+    RecyclerView.Adapter<AdapterMovies.MyViewHolder>(),Onclick {
 
-    interface Onclick {
-        fun onClickKnowMovie(movie: Result?)
+    override fun onClickKnowMovie(movie: Result?) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -41,5 +41,7 @@ class AdapterMovies(private var listMovies: List<Result>?, private val clickMovi
 
     class MyViewHolder(val binding: ListRecyclerMoviesBinding) :
         RecyclerView.ViewHolder(binding.root)
+
+
 
 }

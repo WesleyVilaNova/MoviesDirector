@@ -1,6 +1,6 @@
 package com.example.moviesdirector.view.ui.viewmodel
 
-import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.moviesdirector.view.ui.models.ModelResultDetails
@@ -12,8 +12,13 @@ import retrofit2.Response
 
 class MainViewModel(private val repository: MainRepository) : ViewModel() {
 
-    val listMovies = MutableLiveData<List<Result>>()
-    val errorMsg = MutableLiveData<String>()
+    private val _listMovies = MutableLiveData<List<Result>>()
+    val listMovies : LiveData<List<Result>> = _listMovies
+
+
+    private val _errorMsg = MutableLiveData<String>()
+    val errorMsg : LiveData<String> = _errorMsg
+
 
     fun getListMovies() {
         val requestAPI = repository.getListMovies()
@@ -24,11 +29,11 @@ class MainViewModel(private val repository: MainRepository) : ViewModel() {
                 response: Response<ModelResultDetails?>
             ) {
                 val resultado = response.body()
-                listMovies.postValue(resultado?.results)
+                _listMovies.postValue(resultado?.results)
             }
 
             override fun onFailure(call: Call<ModelResultDetails?>, t: Throwable) {
-                errorMsg.postValue(t.message)
+                _errorMsg.postValue(t.message)
             }
 
         })
