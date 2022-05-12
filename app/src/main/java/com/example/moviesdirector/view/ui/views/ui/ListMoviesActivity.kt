@@ -64,8 +64,11 @@ class ListMoviesActivity : AppCompatActivity(), Onclick {
         binding.recyclerViewList.setHasFixedSize(true)
         viewModel.getListMovies()
         viewModel.listMovies.observe(this) {
-            binding.recyclerViewList.adapter = AdapterMovies(it, this)
+            val adapter = AdapterMovies(this)
+            adapter.submitList(it)
+            binding.recyclerViewList.adapter = adapter
         }
+
         viewModel.errorMsg.observe( this) {
             Toast.makeText(this,R.string.msg_error,Toast.LENGTH_LONG).show()
         }
