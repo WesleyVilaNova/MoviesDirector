@@ -1,34 +1,59 @@
 <resources>
 
     <string name="app_name">MoviesDirector</string>
+
+    <!--Splash screen-->
     <string name="license_2022">copywriting 2022</string>
-    <string name="text_license">texto de licença</string>
-    <string name="logo_app">Logo_app</string>
-    <string name="director">Director</string>
+    <string name="logo_init">logo_tela_inicial</string>
     <string name="movies">Movies</string>
-    <string name="logo_init">logo_inicial</string>
-    <string name="banner_movies">Banner Movies</string>
+    <string name="director">Director</string>
+    <string name="content_logo_app">Imagem da logo do aplicativo</string>
+    <string name="content_text_license">texto de licença: copywriting 2022</string>
+    <string name="content_movies">Texto escrito: Movies</string>
+    <string name="content_director">texto escrito: Director</string>
 
-    <string name="name_movies">XXXXXXXXXXXXXXXXXXXXXXX</string>
-    <string name="punctuation">Pontuação :</string>
-    <string name="value">7.89</string>
-    <string name="Details_movies">de Nathan.</string>
-    <string name="name_app">Movies Director</string>
 
-    <string name="ib_menu">ícone de menu</string>
-    <string name="img_barra">img_barra</string>
+    <!--screen list movies-->
+    <string name="name_movies_list">XXXXXXXXXXXXXXXXXXXXXXX</string>
+    <string name="lancamento">Lançamento:</string>
+    <string name="punctuation">Pontuação</string>
     <string name="know_more">Saiba mais</string>
-    <string name="msg_error">Desculpe, ocorreu um erro ao consultar</string>
+    <string name="Details_movies_list">de Nathan.</string>
+    <string name="content_banner_movies_list">Banner com a imagem do filme na tela detalhes</string>
+    <string name="content_name_movies_list">Nome do filme</string>
+    <string name="content_lancamento">data de lançamento:</string>
+    <string name="content_punctuation">Pontuação do filme</string>
+    <string name="content_button_know_more">Botão saiba mais</string>
+    <string name="content_Details_movies_list">Contém a descrição do filme.</string>
 
-    <string name="about">Sobre o aplicativo</string>
-    <string name="netflix">Netflix</string>
+
+    <!--Screen details-->
+    <string name="name_movies_details">XXXXXXXXXXXXXXXXXXXXXXX</string>
     <string name="data_de_lancamento">Data de lançamento:</string>
-    <string name="_2022_22_22">2022/22/22</string>
+    <string name="data">2022/22/22</string>
     <string name="popularity">Popularidade:</string>
     <string name="nota">Nota:</string>
-    <string name="descricao">Descrição</string>
-    <string name="assistir_agora">Assistir agora !</string>
+    <string name="Details_movies_details">de Nathan.</string>
+    <string name="button_watch_now">Assistir agora !</string>
+    <string name="content_banner_movies_details">Banner com a imagem do filme na tela detalhes</string>
+    <string name="content_name_movies_details">Nome do filme</string>
+    <string name="content_date_details">Descrição com a data de lançamento:</string>
+    <string name="content_popularity_details">Descrição com a popularidade do filme</string>
+    <string name="content_nota_details">Descrição com a nota classsificatória do filme:</string>
+    <string name="content_descrição_name_movies_details">Descrição</string>
+    <string name="content_Details_movies_details">Contém a descrição do filme.</string>
+    <string name="content_button_watch_now">Botão para assistir agora !</string>
+
+
+    <!--Screen about and menu-->
     <string name="text_sobre">O MoviesDirector indexa conteúdo encontrado na web automaticamente usando ajuda de APIs publicas do TMDB. O uso do MoviesDirector é totalmente responsabilidade do usuário. A distribuição de filmes é da plataforma TMDB. Qualquer violação de direitos autorais, entre em contato com o distribuidor. Em caso de dúvidas ou reclamações sobre conteúdo, funcionalidade do site, anúncios entre outros, entre em contato com a equipe de suporte do MoviesDirector pelo email: MoviesDirector@Teste.com</string>
     <string name="screen_about">Você já está na tela sobre</string>
-    <string name="lancamento">Lançamento:</string>
+    <string name="ib_menu">ícone de menu</string>
+    <string name="img_barra">img_barra</string>
+    <string name="msg_error">Desculpe, ocorreu um erro ao consultar</string>
+    <string name="about">Sobre o aplicativo</string>
+    <string name="netflix">Netflix</string>
+    <string name="content_descricao">Descrição da mensagem sobre o aplicativo:O MoviesDirector indexa conteúdo encontrado na web automaticamente usando ajuda de APIs publicas do TMDB. O uso do MoviesDirector é totalmente responsabilidade do usuário. A distribuição de filmes é da plataforma TMDB. Qualquer violação de direitos autorais, entre em contato com o distribuidor. Em caso de dúvidas ou reclamações sobre conteúdo, funcionalidade do site, anúncios entre outros, entre em contato com a equipe de suporte do MoviesDirector pelo email: MoviesDirector@Teste.com</string>
+
+
 </resources>
