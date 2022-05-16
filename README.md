@@ -44,6 +44,7 @@ O MoviesDirector indexa conteúdo encontrado na web automaticamente usando ajuda
 - `Arquetetura`: Atualizada de MVP ---> MVVM
 - `RecyclerView`: ListAdapter com DiffUtil 
 - `ToolBar`: Personalizada
+- `Ferramentas de acessibilidade`: ContentDescription 
 - `CardView`: Design layout
 - `Menu ToolBar`: Funcional com várias opções
 - `Retrofit2`: Consumo de API
