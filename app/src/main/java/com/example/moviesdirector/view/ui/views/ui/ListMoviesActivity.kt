@@ -37,7 +37,6 @@ class ListMoviesActivity : AppCompatActivity(), Onclick {
 
         chamandoRetrofit()
         clickMenu()
-
     }
 
     private fun clickMenu() {
@@ -69,8 +68,8 @@ class ListMoviesActivity : AppCompatActivity(), Onclick {
             binding.recyclerViewList.adapter = adapter
         }
 
-        viewModel.errorMsg.observe( this) {
-            Toast.makeText(this,R.string.msg_error,Toast.LENGTH_LONG).show()
+        viewModel.errorMsg.observe(this) {
+            Toast.makeText(this, R.string.msg_error, Toast.LENGTH_LONG).show()
         }
     }
 

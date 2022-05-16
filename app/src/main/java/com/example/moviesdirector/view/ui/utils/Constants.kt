@@ -1,8 +1,5 @@
 package com.example.moviesdirector.view.ui.utils
 
-import com.example.moviesdirector.view.ui.models.ModelResultDetails
-import com.example.moviesdirector.view.ui.models.Result
-
 class Constants {
     companion object {
         internal const val BASE_URL = "https://api.themoviedb.org/"

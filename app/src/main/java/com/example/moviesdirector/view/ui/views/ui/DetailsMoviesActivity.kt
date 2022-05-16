@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import com.example.moviesdirector.R
 import com.example.moviesdirector.databinding.ActivityDetailsMoviesBinding
 import com.example.moviesdirector.view.ui.models.Result
@@ -25,7 +24,6 @@ class DetailsMoviesActivity : AppCompatActivity() {
         clickMenu()
         recuperando()
         btn_watch()
-
     }
 
     private fun btn_watch() {
@@ -67,6 +65,5 @@ class DetailsMoviesActivity : AppCompatActivity() {
 
             Picasso.get().load(movie.getPostImgDetails()).into(binding.imageViewBackdropPath)
         }
-
     }
 }

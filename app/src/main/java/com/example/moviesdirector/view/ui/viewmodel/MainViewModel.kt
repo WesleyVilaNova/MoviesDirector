@@ -13,12 +13,10 @@ import retrofit2.Response
 class MainViewModel(private val repository: MainRepository) : ViewModel() {
 
     private val _listMovies = MutableLiveData<List<Result>>()
-    val listMovies : LiveData<List<Result>> = _listMovies
-
+    val listMovies: LiveData<List<Result>> = _listMovies
 
     private val _errorMsg = MutableLiveData<String>()
-    val errorMsg : LiveData<String> = _errorMsg
-
+    val errorMsg: LiveData<String> = _errorMsg
 
     fun getListMovies() {
         val requestAPI = repository.getListMovies()
@@ -29,14 +27,12 @@ class MainViewModel(private val repository: MainRepository) : ViewModel() {
                 response: Response<ModelResultDetails?>
             ) {
                 val resultado = response.body()
-                _listMovies.postValue(resultado?.results)
+                resultado.let { _listMovies.postValue(resultado?.results) }
             }
 
             override fun onFailure(call: Call<ModelResultDetails?>, t: Throwable) {
                 _errorMsg.postValue(t.message)
             }
-
         })
     }
-
 }

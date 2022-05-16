@@ -25,12 +25,10 @@ interface WebService {
                 .build()
 
             retrofit.create(WebService::class.java)
-
         }
 
         fun getInstance(): WebService {
             return retrofitService
         }
-
     }
 }

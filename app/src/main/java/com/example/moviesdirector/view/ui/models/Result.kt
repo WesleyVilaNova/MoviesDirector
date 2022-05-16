@@ -17,7 +17,7 @@ data class Result(
 
     fun getDetailsMovies(): String {
         return Constants.BASE_URL + Constants.TYPE + "$id" + Constants.API_KEY + Constants.LANGUAGE
-        //"https://api.themoviedb.org/3/movie/id?api_key=319f821ad80072b8c1dd98a08e31346c&page=1&language=pt-BR"
+        // "https://api.themoviedb.org/3/movie/id?api_key=319f821ad80072b8c1dd98a08e31346c&page=1&language=pt-BR"
     }
 
     fun getPostImg(): String {
@@ -26,8 +26,5 @@ data class Result(
 
     fun getPostImgDetails(): String {
         return Constants.IMG + backdrop_path
-
     }
-
 }
-
