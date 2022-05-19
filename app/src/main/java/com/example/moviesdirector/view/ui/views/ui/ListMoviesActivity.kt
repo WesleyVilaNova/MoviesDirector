@@ -13,7 +13,7 @@ import com.example.moviesdirector.R
 import com.example.moviesdirector.databinding.ActivityListMoviesBinding
 import com.example.moviesdirector.view.ui.interfaces.Onclick
 import com.example.moviesdirector.view.ui.interfaces.WebService
-import com.example.moviesdirector.view.ui.models.Result
+import com.example.moviesdirector.view.ui.models.ModelListMovies
 import com.example.moviesdirector.view.ui.repository.MainRepository
 import com.example.moviesdirector.view.ui.utils.Constants
 import com.example.moviesdirector.view.ui.viewmodel.MainViewModel
@@ -73,9 +73,9 @@ class ListMoviesActivity : AppCompatActivity(), Onclick {
         }
     }
 
-    override fun onClickKnowMovie(movie: Result?) {
+    override fun onClickKnowMovie(movie: ModelListMovies?) {
         val intent = Intent(this, DetailsMoviesActivity::class.java)
-        intent.putExtra("key", movie)
+        intent.putExtra(Constants.KEY_INTENT, movie?.id)
         startActivity(intent)
     }
 }

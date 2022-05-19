@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdirector.databinding.ListRecyclerMoviesBinding
 import com.example.moviesdirector.view.ui.interfaces.Onclick
-import com.example.moviesdirector.view.ui.models.Result
+import com.example.moviesdirector.view.ui.models.ModelListMovies
 import com.squareup.picasso.Picasso
 
 class AdapterMovies(private val clickMovie: Onclick) :
-    ListAdapter<Result, AdapterMovies.MyViewHolder>(DiffCallBack()), Onclick {
+    ListAdapter<ModelListMovies, AdapterMovies.MyViewHolder>(DiffCallBack()), Onclick {
 
-    override fun onClickKnowMovie(movie: Result?) {
+    override fun onClickKnowMovie(movie: ModelListMovies?) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -26,8 +26,8 @@ class AdapterMovies(private val clickMovie: Onclick) :
         val itemMovie = getItem(position)
 
         itemMovie?.let {
-
             Picasso.get().load(itemMovie.getPostImg()).into(holder.binding.imageViewPosterPath)
+
             holder.binding.titleMovies.text = itemMovie.title
             holder.binding.releaseDateRecycler.text = itemMovie.release_date
             holder.binding.textViewDetailsMovies.text = itemMovie.overview
@@ -39,12 +39,12 @@ class AdapterMovies(private val clickMovie: Onclick) :
         RecyclerView.ViewHolder(binding.root)
 }
 
-class DiffCallBack : DiffUtil.ItemCallback<Result>() {
-    override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
+class DiffCallBack : DiffUtil.ItemCallback<ModelListMovies>() {
+    override fun areItemsTheSame(oldItem: ModelListMovies, newItem: ModelListMovies): Boolean {
         return oldItem.title == newItem.title
     }
 
-    override fun areContentsTheSame(oldItem: Result, newItem: Result): Boolean {
+    override fun areContentsTheSame(oldItem: ModelListMovies, newItem: ModelListMovies): Boolean {
         return oldItem.overview == newItem.overview && oldItem.id == newItem.id
     }
 }

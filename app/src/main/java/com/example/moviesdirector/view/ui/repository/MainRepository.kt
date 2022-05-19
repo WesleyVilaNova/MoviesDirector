@@ -10,4 +10,10 @@ class MainRepository(private val retrofit: WebService) {
         Constants.PAGE,
         Constants.LANGUAGE
     )
+
+    fun getListMoviesDetails(id: Int) = retrofit.getMoviesDetails(
+        id,
+        Constants.API_KEY,
+        Constants.LANGUAGE
+    )
 }

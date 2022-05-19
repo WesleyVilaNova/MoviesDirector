@@ -5,31 +5,46 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.example.moviesdirector.R
 import com.example.moviesdirector.databinding.ActivityDetailsMoviesBinding
-import com.example.moviesdirector.view.ui.models.Result
+import com.example.moviesdirector.view.ui.interfaces.WebService
+import com.example.moviesdirector.view.ui.models.ModelDetailsMovies
+import com.example.moviesdirector.view.ui.repository.MainRepository
 import com.example.moviesdirector.view.ui.utils.Constants
+import com.example.moviesdirector.view.ui.viewmodel.DetailsViewModel
+import com.example.moviesdirector.view.ui.viewmodel.DetailsViewModelFactory
 import com.squareup.picasso.Picasso
 
 class DetailsMoviesActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityDetailsMoviesBinding
+    lateinit var viewModel: DetailsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityDetailsMoviesBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        viewModel = ViewModelProvider(
+            this,
+            DetailsViewModelFactory(MainRepository(WebService.getInstance()))
+        )[DetailsViewModel::class.java]
+
         clickMenu()
-        recuperando()
-        btn_watch()
+        recuperandoId()
     }
 
-    private fun btn_watch() {
+    private fun btn_watch(url: ModelDetailsMovies?) {
         binding.btnWatch.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse(Constants.NETFLIX)
+            try {
+                intent.data = Uri.parse(url?.getUrlDetailsMovie())
+            } catch (e: Exception) {
+                Toast.makeText(this, getString(R.string.erro_url_watch), Toast.LENGTH_LONG).show()
+            }
             startActivity(intent)
         }
     }
@@ -53,17 +68,29 @@ class DetailsMoviesActivity : AppCompatActivity() {
         }
     }
 
-    private fun recuperando() {
-        val movie: Result? = intent.getSerializableExtra("key") as Result?
+    private fun recuperandoId() {
+        val id = intent.getIntExtra(Constants.KEY_INTENT, 0)
+        id.let { viewModel.getDetailsMovies(id) }
+        dataMovieDetails()
+    }
 
-        if (movie != null) {
-            binding.textViewDetailsMovies.text = movie.overview
-            binding.titleMovies.text = movie.title
-            binding.popularity.text = movie.popularity
-            binding.releaseDate.text = movie.release_date
-            binding.voteAverage.rating = (movie.vote_average ?: 0) as Float
+    private fun dataMovieDetails() {
+        viewModel.viewDetailsListMovies.observe(this) { listMoviesDetails ->
 
-            Picasso.get().load(movie.getPostImgDetails()).into(binding.imageViewBackdropPath)
+            Picasso.get().load(listMoviesDetails?.getPostImgDetails()).into(binding.imageViewBackdropPath)
+            binding.titleMovies.text = listMoviesDetails?.title
+            binding.textTagLine.text = listMoviesDetails?.tagline
+            binding.voteAverage.rating = listMoviesDetails?.vote_average!!.toFloat()
+            binding.textViewDetailsMovies.text = listMoviesDetails.overview
+            binding.popularity.text = listMoviesDetails.popularity
+            try {
+                binding.textGenresOne.text = listMoviesDetails.genres[0].genero1
+                binding.textGenresTwo.text = listMoviesDetails.genres[1].genero1
+                binding.textGenresThree.text = listMoviesDetails.genres[2].genero1
+            } catch (e: Exception) {
+                Toast.makeText(this, getString(R.string.generos_error), Toast.LENGTH_LONG).show()
+            }
+            btn_watch(listMoviesDetails)
         }
     }
 }

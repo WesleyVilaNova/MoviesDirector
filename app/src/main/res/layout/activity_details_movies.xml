@@ -3,13 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bg_app">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="64dp">
+        android:layout_marginBottom="32dp">
 
 
         <include
@@ -19,11 +18,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <ImageView
             android:id="@+id/imageView_backdrop_path"
             android:layout_width="0dp"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:layout_margin="16dp"
             android:layout_marginTop="16dp"
             android:contentDescription="@string/content_banner_movies_details"
@@ -40,11 +38,11 @@
             android:layout_marginTop="16dp"
             android:contentDescription="@string/content_name_movies_details"
             android:fontFamily="@font/font_text_alice"
+            android:paddingHorizontal="@dimen/padding"
             android:text="@string/name_movies_details"
-            android:padding="@dimen/padding"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="32sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,9 +50,71 @@
 
 
         <TextView
+            android:id="@+id/text_tag_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/content_call_movie"
+            android:fontFamily="@font/font_text_alice"
+            android:text="@string/call_title"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_movies" />
+
+        <TextView
+            android:id="@+id/text_genres_one"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/content_genres_one"
+            android:fontFamily="@font/font_text_alice"
+            android:text="@string/genero"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_tag_line" />
+
+        <TextView
+            android:id="@+id/text_genres_two"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/content_genres_two"
+            android:fontFamily="@font/font_text_alice"
+            android:text="@string/genero"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/text_genres_three"
+            app:layout_constraintStart_toEndOf="@+id/text_genres_one"
+            app:layout_constraintTop_toBottomOf="@+id/text_tag_line" />
+
+        <TextView
+            android:id="@+id/text_genres_three"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/content_genres_three"
+            android:fontFamily="@font/font_text_alice"
+            android:text="@string/genero"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_tag_line" />
+
+        <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:contentDescription="@string/content_date_details"
             android:fontFamily="@font/font_text_alice"
             android:paddingHorizontal="@dimen/padding"
@@ -63,7 +123,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_movies" />
+            app:layout_constraintTop_toBottomOf="@+id/text_genres_two" />
 
         <TextView
             android:id="@+id/release_date"
@@ -149,12 +209,13 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/content_descrição_name_movies_details"
             android:fontFamily="@font/font_text_alice"
-            android:text="@string/content_descrição_name_movies_details"
             android:padding="@dimen/padding"
+            android:text="@string/content_descrição_name_movies_details"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -164,8 +225,8 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/content_Details_movies_details"
             android:fontFamily="@font/font_text_alice"
-            android:text="@string/Details_movies_details"
             android:padding="@dimen/padding"
+            android:text="@string/Details_movies_details"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -180,8 +241,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
-            android:contentDescription="@string/content_button_watch_now"
             android:backgroundTint="@color/red_logo"
+            android:contentDescription="@string/content_button_watch_now"
             android:fontFamily="@font/font_text_alice"
             android:text="@string/button_watch_now"
             android:textSize="18sp"

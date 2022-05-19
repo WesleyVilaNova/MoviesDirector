@@ -35,7 +35,12 @@
     <string name="nota">Nota:</string>
     <string name="Details_movies_details">de Nathan.</string>
     <string name="button_watch_now">Assistir agora !</string>
+    <string name="genero">-------</string>
     <string name="content_banner_movies_details">Banner com a imagem do filme na tela detalhes</string>
+    <string name="content_call_movie">Chamada para o filme</string>
+    <string name="content_genres_one">Gênero do filme um</string>
+    <string name="content_genres_two">Gênero do filme two</string>
+    <string name="content_genres_three">Gênero do filme three</string>
     <string name="content_name_movies_details">Nome do filme</string>
     <string name="content_date_details">Descrição com a data de lançamento:</string>
     <string name="content_popularity_details">Descrição com a popularidade do filme</string>
@@ -54,6 +59,9 @@
     <string name="about">Sobre o aplicativo</string>
     <string name="netflix">Netflix</string>
     <string name="content_descricao">Descrição da mensagem sobre o aplicativo:O MoviesDirector indexa conteúdo encontrado na web automaticamente usando ajuda de APIs publicas do TMDB. O uso do MoviesDirector é totalmente responsabilidade do usuário. A distribuição de filmes é da plataforma TMDB. Qualquer violação de direitos autorais, entre em contato com o distribuidor. Em caso de dúvidas ou reclamações sobre conteúdo, funcionalidade do site, anúncios entre outros, entre em contato com a equipe de suporte do MoviesDirector pelo email: MoviesDirector@Teste.com</string>
+    <string name="call_title">A chamada do título!</string>
+    <string name="erro_url_watch">Desculpe este filme não tem uma URL de destino</string>
+    <string name="generos_error">Este filme só tem 2 ou menos gêneros</string>
 
 
 </resources>
