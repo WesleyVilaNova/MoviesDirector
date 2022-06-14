@@ -42,10 +42,12 @@ O MoviesDirector indexa conteúdo encontrado na web automaticamente usando ajuda
 - `Fontes personalizadas, ícones e cores`: Para maior exclusividade
 - `ScreenOrientation`: Manter a tela Screen fixa
 - `Arquetetura`: Atualizada de MVP ---> MVVM ---> MVVM+CleanArchiteture
-- `Coroutines`: Implementando coroutines (Finalizando implementações)
+- `Coroutines`
 - `RecyclerView`: ListAdapter com DiffUtil 
 - `ToolBar`: Personalizada
+-  `Modulo de Segurança`: Implementando...
 -  `Tratamento de Error`: implementando...
+-  `Cryptografia do app`: Implementando...
 - `Ferramentas de acessibilidade`: ContentDescription 
 - `CardView`: Design layout
 - `Menu ToolBar`: Funcional com várias opções
