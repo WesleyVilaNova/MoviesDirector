@@ -62,6 +62,8 @@
     <string name="call_title">A chamada do título!</string>
     <string name="erro_url_watch">Desculpe este filme não tem uma URL de destino</string>
     <string name="generos_error">Este filme só tem 2 ou menos gêneros</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

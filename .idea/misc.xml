@@ -20,7 +20,12 @@
         <entry key="..\:/Users/wnovalim/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/activity_about_screen.xml" value="0.1" />
         <entry key="..\:/Users/wnovalim/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/activity_details_movies.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wnovalim/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/activity_list_movies.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/wnovalim/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wnovalim/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/wnovalim/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/fragment_first.xml" value="0.152" />
+        <entry key="..\:/Users/wnovalim/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/fragment_last.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/wnovalim/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/fragment_list_movies.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/wnovalim/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/fragment_splash.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wnovalim/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/list_recycler_movies.xml" value="0.72" />
         <entry key="..\:/Users/wnovalim/AndroidStudioProjects/MoviesDirector/app/src/main/res/layout/toolbar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wnovalim/AndroidStudioProjects/MoviesDirector/app/src/main/res/menu/itens_menu.xml" value="0.25416666666666665" />

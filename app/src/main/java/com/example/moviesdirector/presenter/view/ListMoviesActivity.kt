@@ -1,22 +1,24 @@
-package com.example.moviesdirector.view.ui.presenter.view
+package com.example.moviesdirector.presenter.view
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moviesdirector.R
+import com.example.moviesdirector.data.api.WebService
+import com.example.moviesdirector.data.repository.ListMoviesRepository
 import com.example.moviesdirector.databinding.ActivityListMoviesBinding
-import com.example.moviesdirector.view.ui.domain.Onclick
-import com.example.moviesdirector.view.ui.data.api.WebService
-import com.example.moviesdirector.view.ui.domain.models.ModelListMovies
-import com.example.moviesdirector.view.ui.data.repository.MainRepository
-import com.example.moviesdirector.view.ui.domain.utils.Constants
-import com.example.moviesdirector.view.ui.presenter.viewmodel.ListMoviesViewModel
+import com.example.moviesdirector.domain.exceptions.ErrorHandling
+import com.example.moviesdirector.domain.models.ModelListMovies
+import com.example.moviesdirector.domain.usecase.ListMoviesUseCase
+import com.example.moviesdirector.domain.utils.Constants
+import com.example.moviesdirector.presenter.viewmodel.ListMoviesViewModel
 import com.example.moviesdirector.view.ui.views.adapter.AdapterMovies
 
 class ListMoviesActivity : AppCompatActivity(), Onclick {
@@ -31,14 +33,19 @@ class ListMoviesActivity : AppCompatActivity(), Onclick {
 
         viewModel = ViewModelProvider(
             this,
-            ListMoviesViewModel.MainViewModelFactory(MainRepository(retrofit = WebService.getInstanceBaseUrl()))
+            ListMoviesViewModel.MainViewModelFactory(
+                ListMoviesUseCase(
+                    ListMoviesRepository(WebService.getInstanceBaseUrl())
+                )
+            )
         )[ListMoviesViewModel::class.java]
 
-        chamandoRetrofit()
-        clickMenu()
+        setupMenu()
+        callingRequestApi()
+        setupObservers()
     }
 
-    private fun clickMenu() {
+    private fun setupMenu() {
         binding.includeDetails.ibMenu.setOnClickListener {
             val popupMenu = PopupMenu(this, binding.includeDetails.ibMenu)
             popupMenu.menuInflater.inflate(R.menu.itens_menu, popupMenu.menu)
@@ -57,19 +64,43 @@ class ListMoviesActivity : AppCompatActivity(), Onclick {
         }
     }
 
-    private fun chamandoRetrofit() {
+    private fun callingRequestApi() {
+        viewModel.getListMovies()
+    }
+
+    private fun setupObservers() {
+        viewModel.errorMsg.observe(this) { messageError ->
+            setupError(messageError)
+        }
+        viewModel.listMovies.observe(this) { resultListMovie ->
+            loadingListMovie(resultListMovie)
+        }
+    }
+
+    private fun setupError(messageError: ErrorHandling<String>?) {
+        when (messageError) {
+            is ErrorHandling.Error -> {
+                Toast.makeText(this, messageError.exception.message, Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    private fun loadingListMovie(resultListMovie: ErrorHandling<List<ModelListMovies>>) {
         binding.recyclerViewList.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewList.setHasFixedSize(true)
-        viewModel.getListMovies()
-        viewModel.listMovies.observe(this) {
-            val adapter = AdapterMovies(this)
-            adapter.submitList(it)
-            binding.recyclerViewList.adapter = adapter
-        }
+        val adapter = AdapterMovies(this)
+        when (resultListMovie) {
 
-        viewModel.errorMsg.observe(this) {
-            Toast.makeText(this, R.string.msg_error, Toast.LENGTH_LONG).show()
+            is ErrorHandling.Loading -> {
+                binding.progressList.visibility = View.VISIBLE
+            }
+
+            is ErrorHandling.Success -> {
+                binding.progressList.visibility = View.INVISIBLE
+                adapter.submitList(resultListMovie.listMovies)
+            }
         }
+        binding.recyclerViewList.adapter = adapter
     }
 
     override fun onClickKnowMovie(movie: ModelListMovies?) {

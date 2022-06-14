@@ -1,4 +1,4 @@
-package com.example.moviesdirector.view.ui.domain.utils
+package com.example.moviesdirector.domain.utils
 
 class Constants {
 
