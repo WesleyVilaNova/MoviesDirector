@@ -45,6 +45,7 @@ O MoviesDirector indexa conteúdo encontrado na web automaticamente usando ajuda
 - `Coroutines`: Implementando coroutines (Finalizando implementações)
 - `RecyclerView`: ListAdapter com DiffUtil 
 - `ToolBar`: Personalizada
+-  `Tratamento de Error`: implementando...
 - `Ferramentas de acessibilidade`: ContentDescription 
 - `CardView`: Design layout
 - `Menu ToolBar`: Funcional com várias opções
