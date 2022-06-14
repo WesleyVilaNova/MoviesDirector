@@ -1,6 +1,6 @@
-package com.example.moviesdirector.view.ui.domain.models
+package com.example.moviesdirector.domain.models
 
-import com.example.moviesdirector.view.ui.domain.utils.Constants
+import com.example.moviesdirector.domain.utils.Constants
 import java.io.Serializable
 
 data class ModelListMovies(

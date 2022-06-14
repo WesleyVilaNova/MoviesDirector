@@ -1,4 +1,4 @@
-package com.example.moviesdirector.view.ui.presenter.view
+package com.example.moviesdirector.presenter.view
 
 import android.content.Intent
 import android.net.Uri
@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moviesdirector.R
 import com.example.moviesdirector.databinding.ActivityAboutScreenBinding
-import com.example.moviesdirector.view.ui.domain.utils.Constants
+import com.example.moviesdirector.domain.utils.Constants
 
 class AboutScreenActivity : AppCompatActivity() {
 

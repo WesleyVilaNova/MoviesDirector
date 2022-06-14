@@ -1,8 +1,8 @@
-package com.example.moviesdirector.view.ui.data.api
+package com.example.moviesdirector.data.api
 
-import com.example.moviesdirector.view.ui.domain.models.ModelDetailsMovies
-import com.example.moviesdirector.view.ui.domain.models.ModelMovies
-import com.example.moviesdirector.view.ui.domain.utils.Constants
+import com.example.moviesdirector.domain.models.ModelDetailsMovies
+import com.example.moviesdirector.domain.models.ModelMovies
+import com.example.moviesdirector.domain.utils.Constants
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,7 +16,7 @@ interface WebService {
         @Query("api_key") api_key: String?,
         @Query("page") page: String?,
         @Query("language") languege: String?,
-    ): Call<ModelMovies?>
+    ): Call<ModelMovies>
 
     @GET(Constants.PATH_URL_DETAILS)
     fun getDetailsMoviesNetWork(

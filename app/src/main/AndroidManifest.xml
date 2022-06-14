@@ -13,16 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoviesDirector">
         <activity
-            android:name=".view.ui.presenter.view.AboutScreenActivity"
+            android:name="com.example.moviesdirector.presenter.view.AboutScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ui.presenter.view.DetailsMoviesActivity"
+            android:name="com.example.moviesdirector.presenter.view.DetailsMoviesActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ui.presenter.view.ListMoviesActivity"
+            android:name="com.example.moviesdirector.presenter.view.ListMoviesActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ui.presenter.view.SplashActivity"
+            android:name="com.example.moviesdirector.presenter.view.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

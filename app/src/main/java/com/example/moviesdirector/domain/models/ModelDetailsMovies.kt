@@ -1,6 +1,6 @@
-package com.example.moviesdirector.view.ui.domain.models
+package com.example.moviesdirector.domain.models
 
-import com.example.moviesdirector.view.ui.domain.utils.Constants
+import com.example.moviesdirector.domain.utils.Constants
 
 data class ModelDetailsMovies(
     val overview: String?,
@@ -15,10 +15,18 @@ data class ModelDetailsMovies(
 ) {
 
     fun getPostImgDetails(): String {
-        return Constants.IMG + backdrop_path
+        return getPostImg()
     }
 
     fun getUrlDetailsMovie(): String {
+        return getUrl()
+    }
+
+    private fun getUrl(): String {
         return homepage.toString()
+    }
+
+    private fun getPostImg(): String {
+        return Constants.IMG + backdrop_path
     }
 }

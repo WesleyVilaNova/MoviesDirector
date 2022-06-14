@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdirector.databinding.ListRecyclerMoviesBinding
-import com.example.moviesdirector.view.ui.domain.Onclick
-import com.example.moviesdirector.view.ui.domain.models.ModelListMovies
+import com.example.moviesdirector.presenter.view.Onclick
+import com.example.moviesdirector.domain.models.ModelListMovies
 import com.squareup.picasso.Picasso
 
 class AdapterMovies(private val clickMovie: Onclick) :

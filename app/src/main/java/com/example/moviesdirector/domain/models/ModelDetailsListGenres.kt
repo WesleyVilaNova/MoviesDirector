@@ -1,4 +1,4 @@
-package com.example.moviesdirector.view.ui.domain.models
+package com.example.moviesdirector.domain.models
 
 import com.google.gson.annotations.SerializedName
 
